@@ -29,5 +29,19 @@ class TestZoo(unittest.TestCase):
         after_pay = self.zz.budget
         self.assertLessEqual(after_pay, before_pay)
 
+    #Needs more functionality
+    # def test_check_for_dead_animals(self):
+    #     self.zz.animals.append('horse')
+    #     self.zz.animals['hourse'].age = 'hourse'.life_expectacy + 1
+    #     self.zz.check_for_dead_animals()
+    #     self.assertNotIn('horse', self.zz.animals)
+
+    #Needs more functionality
+    # def test_check_if_reproduction(self):
+    #     self.zz.animals.append('Female hourse')
+    #     self.zz.animals.append('male hourse')
+    #     self.zz.check_if_reproduction()
+    #     self.assertIn('little house', self.zz.animals)
+
 if __name__ == '__main__':
     unittest.main()
