@@ -3,3 +3,11 @@ class Zoo:
         self.animals = []
         self.capacity = capacity
         self.budget = budget
+
+    #Should append object from animal class
+    def accomodate_animal(self, animal):
+        self.animals.append(animal)
+
+    #Adding some random money.
+    def win_money(self):
+        self.budget += 1000

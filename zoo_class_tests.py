@@ -15,7 +15,13 @@ class TestZoo(unittest.TestCase):
 
     def test_accomodate_animal(self):
         self.zz.accomodate_animal('rabbit')
-        self.assertIn(self.zz.animals, 'rabbit')
+        self.assertIn('rabbit', self.zz.animals)
+
+    def test_win_money(self):
+        before_money = self.zz.budget
+        self.zz.win_money()
+        after_money = self.zz.budget
+        self.assertGreater(after_money, before_money)
 
 if __name__ == '__main__':
     unittest.main()
