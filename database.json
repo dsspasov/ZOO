@@ -1,16 +1,12 @@
-[
-    {
-        "species" : {
-            "tiger":{
-                "life_expectancy" : 20,
-                "food_type": "carnivore",
-                "gestation_period": 3,
-                "newborn_weight" : 1,
-                "weight_age" : 0,
-                "food_weight" : 0
-            }
+{
+    "species" : {
+        "tiger":{
+            "life_expectancy" : 20,
+            "food_type": "carnivore",
+            "gestation_period": 3,
+            "newborn_weight" : 1,
+            "weight_age" : 0,
+            "food_weight" : 0
         }
-
     }
-
-]
+}
