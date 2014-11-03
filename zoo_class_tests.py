@@ -13,5 +13,9 @@ class TestZoo(unittest.TestCase):
         self.assertEqual(self.zz.budget, 10000.0)
         self.assertNotEqual(self.zz.animals, ['panda'])
 
+    def test_accomodate_animal(self):
+        self.zz.accomodate_animal('rabbit')
+        self.assertIn(self.zz.animals, 'rabbit')
+
 if __name__ == '__main__':
     unittest.main()
