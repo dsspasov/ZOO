@@ -21,7 +21,13 @@ class TestZoo(unittest.TestCase):
         before_money = self.zz.budget
         self.zz.win_money()
         after_money = self.zz.budget
-        self.assertGreater(after_money, before_money)
+        self.assertGreaterEqual(after_money, before_money)
+
+    def test_pay_expanditures(self):
+        before_pay = self.zz.budget
+        self.zz.pay_expanditures()
+        after_pay = self.zz.budget
+        self.assertLessEqual(after_pay, before_pay)
 
 if __name__ == '__main__':
     unittest.main()

@@ -11,3 +11,8 @@ class Zoo:
     #Adding some random money.
     def win_money(self):
         self.budget += 1000
+
+    #Taking some random money.
+    #Shoudl check if budget < 0
+    def pay_expanditures(self):
+        self.budget -= 1000
