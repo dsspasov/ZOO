@@ -15,6 +15,7 @@ class Animal:
         self.weight += 1
 
     def die(self):
+        #the chance of dying
         if (self.age/50) > 0.8:
             pass
             #die
