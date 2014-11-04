@@ -15,66 +15,36 @@
             "gestation_period": 3,
             "newborn_weight" : 1.5,
             "average_weight": 150,
-            "weight_age" : 0,
-            "food_weight" : 0
+            "weight_age" : 8,
+            "food_weight" : 0.02
 
         },
-        "tiger":{
-            "life_expectancy" : 20,
-            "food_type": "carnivore",
-            "gestation_period": 3,
+        "ape":{
+            "life_expectancy" : 40,
+            "food_type": "herbivore",
+            "gestation_period": 9,
             "newborn_weight" : 1,
-            "average_weight": 150,
-            "weight_age" : 0,
-            "food_weight" : 0
+            "average_weight": 50,
+            "weight_age" : 1,
+            "food_weight" : 0.06
         },
-        "tiger":{
+        "pengin":{
             "life_expectancy" : 20,
             "food_type": "carnivore",
-            "gestation_period": 3,
+            "gestation_period": 5,
             "newborn_weight" : 1,
-            "average_weight": 150,
-            "weight_age" : 0,
-            "food_weight" : 0
+            "average_weight": 30,
+            "weight_age" : 1,
+            "food_weight" : 0.07
         },
-        "tiger":{
-            "life_expectancy" : 20,
-            "food_type": "carnivore",
+        "turtle":{
+            "life_expectancy" : 120,
+            "food_type": "herbivore",
             "gestation_period": 3,
             "newborn_weight" : 1,
-            "average_weight": 150,
-            "weight_age" : 0,
-            "food_weight" : 0
-        },
-        "tiger":{
-            "life_expectancy" : 20,
-            "food_type": "carnivore",
-            "gestation_period": 3,
-            "newborn_weight" : 1,
-            "average_weight": 150,
-            "weight_age" : 0,
-            "food_weight" : 0
-        },
-        "tiger":{
-            "life_expectancy" : 20,
-            "food_type": "carnivore",
-            "gestation_period": 3,
-            "newborn_weight" : 1,
-            "average_weight": 150,
-            "weight_age" : 0,
-            "food_weight" : 0
-        },
-        "tiger":{
-            "life_expectancy" : 20,
-            "food_type": "carnivore",
-            "gestation_period": 3,
-            "newborn_weight" : 1,
-            "average_weight": 150,
-            "weight_age" : 0,
-            "food_weight" : 0,
-            "weight_age" : 12,
-            "food_weight" : 0.5,
-            "average_weight":200
+            "average_weight": 750,
+            "weight_age" : 10,
+            "food_weight" : 0.01
         }
     }
 }
