@@ -3,8 +3,73 @@
         "tiger":{
             "life_expectancy" : 20,
             "food_type": "carnivore",
+            "gestation_period": 6,
+            "newborn_weight" : 1,
+            "average_weight": 180,
+            "weight_age" : 10,
+            "food_weight" : 0.03
+        },
+        "lion":{
+            "life_expectancy" : 20,
+            "food_type": "carnivore",
+            "gestation_period": 3,
+            "newborn_weight" : 1.5,
+            "average_weight": 150,
+            "weight_age" : 0,
+            "food_weight" : 0
+
+        },
+        "tiger":{
+            "life_expectancy" : 20,
+            "food_type": "carnivore",
             "gestation_period": 3,
             "newborn_weight" : 1,
+            "average_weight": 150,
+            "weight_age" : 0,
+            "food_weight" : 0
+        },
+        "tiger":{
+            "life_expectancy" : 20,
+            "food_type": "carnivore",
+            "gestation_period": 3,
+            "newborn_weight" : 1,
+            "average_weight": 150,
+            "weight_age" : 0,
+            "food_weight" : 0
+        },
+        "tiger":{
+            "life_expectancy" : 20,
+            "food_type": "carnivore",
+            "gestation_period": 3,
+            "newborn_weight" : 1,
+            "average_weight": 150,
+            "weight_age" : 0,
+            "food_weight" : 0
+        },
+        "tiger":{
+            "life_expectancy" : 20,
+            "food_type": "carnivore",
+            "gestation_period": 3,
+            "newborn_weight" : 1,
+            "average_weight": 150,
+            "weight_age" : 0,
+            "food_weight" : 0
+        },
+        "tiger":{
+            "life_expectancy" : 20,
+            "food_type": "carnivore",
+            "gestation_period": 3,
+            "newborn_weight" : 1,
+            "average_weight": 150,
+            "weight_age" : 0,
+            "food_weight" : 0
+        },
+        "tiger":{
+            "life_expectancy" : 20,
+            "food_type": "carnivore",
+            "gestation_period": 3,
+            "newborn_weight" : 1,
+            "average_weight": 150,
             "weight_age" : 0,
             "food_weight" : 0
         }
