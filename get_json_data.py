@@ -39,9 +39,10 @@ class GetJsonData:
     def get_weight_age(self, type_of_animal):
         return self.result[type_of_animal]["weight_age"]
 
+    #returns ration of eaten food to current weight
     def get_food_weight(self, type_of_animal):
         return self.result[type_of_animal]["food_weight"]
 
+    #get average max weight
     def get_average_weight(self, type_of_animal):
         return self.result[type_of_animal]["average_weight"]
-
