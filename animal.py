@@ -9,6 +9,8 @@ class Animal:
         self.name = name
         self.gender = gender
         self.weight = weight
+        self.pregnant = False
+        self.pregnancy = 0
         self.info = GetJsonData("database.json")
 
     #how much food the animal eats in kilos
