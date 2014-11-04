@@ -18,9 +18,10 @@ class Animal:
 
     def grows(self):
         self.age += 1
-        if (self.weight) < (
-                self.animal_settings.get_average_weight(self.species)):
+        if self.weight < self.animal_settings.get_average_weight(self.species):
             self.weight += self.animal_settings.get_weight_age(self.species)
+            if self.weight > self.animal_settings.get_average_weight(self.species):
+                self.weight = self.animal_settings.get_average_weight(self.species)
 
     #We could add dead before max age reached
     def die(self):
