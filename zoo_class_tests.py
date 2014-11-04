@@ -7,6 +7,7 @@ class TestZoo(unittest.TestCase):
     def setUp(self):
         self.zz = Zoo(10, 10000)
         self.kitten = Animal("tiger", "DiviaLud", "male", 10, 150)
+        self.kitten2 = Animal("tiger", "DiviaLuda", "female", 10, 150)
 
     def test_init(self):
         self.zz.animals.append(self.kitten)
@@ -19,11 +20,16 @@ class TestZoo(unittest.TestCase):
         self.zz.accomodate_animal(self.kitten)
         self.assertIn(self.kitten, self.zz.animals)
 
-    # def test_win_money(self):
-    #     before_money = self.zz.budget
-    #     self.zz.win_money()
-    #     after_money = self.zz.budget
-    #     self.assertGreaterEqual(after_money, before_money)
+    def test_win_money(self):
+        before_money = self.zz.budget
+        self.zz.win_money()
+        after_money = self.zz.budget
+        self.assertGreaterEqual(after_money, before_money)
+
+    def test_make_animals(self):
+        self.zz.make_animals(self.kitten, self.kitten2)
+        self.assertTrue(self.kitten2.pregnant)
+
 
     # def test_pay_expanditures(self):
     #     before_pay = self.zz.budget

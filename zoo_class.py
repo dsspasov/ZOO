@@ -28,5 +28,10 @@ class Zoo:
             if animal.age >= animal.life_expectancy:
                 self.animals.remove(animal)
 
-    #No ideas
-    # def check_if_reproduciton(self):
+    #If you know what I mean ;)
+    def make_animals(self, male_animal, female_animal):
+        if male_animal.gender == 'male' and female_animal.gender == 'female':
+            if female_animal.pregnancy == 0:
+                female_animal.pregnant = True
+        else:
+            print("Sex happened but baby did not :(")
