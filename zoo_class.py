@@ -8,20 +8,25 @@ class Zoo:
     def accomodate_animal(self, animal):
         self.animals.append(animal)
 
-    #Adding some random money.
+    def check_if_falit(self):
+        if self.budget < 0:
+            return True
+        return False
+
+    #We will work in months - 60$ day ~ 1800$ month
     def win_money(self):
-        self.budget += 1000
+        for animal in self.animals:
+            self.budget += 1800
 
     #Taking some random money.
     #Shoudl check if budget < 0
     def pay_expanditures(self):
         self.budget -= 1000
 
-    #Needs more funcitonality
-    # def check_for_dead_animals(self):
-    #     for animal in self.animals:
-    #         if animal.age >= animal.life_expectancy:
-    #             self.animals.remove(animal)
+    def check_for_dead_animals(self):
+        for animal in self.animals:
+            if animal.age >= animal.life_expectancy:
+                self.animals.remove(animal)
 
     #No ideas
     # def check_if_reproduciton(self):
