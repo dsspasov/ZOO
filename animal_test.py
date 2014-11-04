@@ -16,15 +16,18 @@ class TestAnimal(unittest.TestCase):
         self.assertEqual(150, self.animal.weight)
 
     def test_eat(self):
-        pass
+        food_in_kilos = self.animal.eat()
+        self.assertEqual(75, food_in_kilos)
 
     def test_grows(self):
         self.animal.grows()
         self.assertEqual(11, self.animal.age)
-        #self.assertEqual(151, self.animal.weight)
+        self.assertEqual(282, self.animal.weight)
 
-    def test_die(self):
-        pass
+    def test_chance_of_dying(self):
+        chance = self.animal.chance_of_dying()
+        self.assertEqual(0.5, chance)
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -13,15 +13,17 @@ class Animal:
 
     def eat(self):
         pass
-        #use food type from json and decrement the same food type in zoo
-        # by weight*food_weight()
-
+        #how much food the animal eats in kilos
+        #and it can be multiply by the cost of eaten food so we will have the outcomes
+        return self.weight * self.animal_settings.get_food_weight(self.species)
+        
     def grows(self):
         self.age += 1
-        if self.weight < self.animal_settings[self.species].get_weight_age():
-            self.weight += 1
+        if (self.weight) < (
+                self.animal_settings.get_average_weight(self.species)):
+            self.weight += self.age * self.animal_settings.get_weight_age(self.species)
 
     def chance_of_dying(self):
         return (
-            self.age / self.animal_settings[self.species].get_life_expectancy()
-            )
+            self.age / self.animal_settings.get_life_expectancy(self.species)
+        )
