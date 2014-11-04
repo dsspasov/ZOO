@@ -69,12 +69,15 @@
             "food_type": "carnivore",
             "gestation_period": 3,
             "newborn_weight" : 1,
+<<<<<<< HEAD
             "average_weight": 150,
             "weight_age" : 0,
-            "food_weight" : 0,
+            "food_weight" : 0
+=======
             "weight_age" : 12,
             "food_weight" : 0.5,
             "average_weight":200
+>>>>>>> 441ce82d026c21cff7cf6de6b466b1c240cf35d3
         }
     }
 }

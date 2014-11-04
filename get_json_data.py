@@ -41,3 +41,7 @@ class GetJsonData:
 
     def get_food_weight(self, type_of_animal):
         return self.result[type_of_animal]["food_weight"]
+
+    def get_average_weight(self, type_of_animal):
+        return self.result[type_of_animal]["average_weight"]
+

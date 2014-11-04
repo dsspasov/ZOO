@@ -24,10 +24,13 @@ class TestGetJsonData(unittest.TestCase):
         self.assertEqual(1, self.new_json.get_newborn_weight("tiger"))
 
     def test_get_weight_age(self):
-        self.assertEqual(0, self.new_json.get_weight_age("tiger"))
+        self.assertEqual(12, self.new_json.get_weight_age("tiger"))
 
     def test_get_food_weight(self):
-        self.assertEqual(0, self.new_json.get_food_weight("tiger"))
+        self.assertEqual(0.5, self.new_json.get_food_weight("tiger"))
+
+    def test_get_average_weight(self):
+        self.assertEqual(200, self.new_json.get_average_weight("tiger"))
 
 if __name__ == '__main__':
     unittest.main()
