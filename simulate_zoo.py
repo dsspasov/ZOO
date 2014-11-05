@@ -12,12 +12,13 @@ class SimultaZoo:
         animal_list = self.zoo.animals
         printed_string = ""
         for animal in animal_list:
-            printed_string += "{} : {}, {}, {}".format(animal.name, animal.species, animal.age, animal.weight) +"\n"
-        #return printed_string
+            printed_string += "{} : {}, {}, {}".format(
+                animal.name, animal.species, animal.age, animal.weight) + "\n"
+        # return printed_string
         print(printed_string)
 
     def acomodate(self, species, age, name, gender, weight):
-        animal_x = ANimal(species, age, name, gender, weight)
+        animal_x = Animal(species, age, name, gender, weight)
         self.zoo.acomodate(animal_x)
 
     def move_to_habitat(self, species, name):
@@ -25,10 +26,9 @@ class SimultaZoo:
         for animal in animal_list:
             if species == animal.species and name == animal.name:
                 self.zoo.remove(animal)
-                #i = animal_list.index(animal)
-                #self.zoo.pop(i)
+
     def simulate(self, interval_of_time, period):
-        #more things have to be done
+        # more things have to be done
         while period != 0:
 
             for animal in self.zoo.animals:
@@ -51,15 +51,16 @@ class SimultaZoo:
             period -= 1
 
     def main(self):
-        command = input ("Enter command >")
-        option = command.split(" ") 
+        command = input("Enter command >")
+        option = command.split(" ")
 
         if option[0] == "see_animals":
             self.see_animals()
 
         if option[0] == "acomodate":
                         #   species,     age       name,     gender   , weight
-            self.acomodate(option[1], option[2], option[3], option[4], option[5])
+            self.acomodate(
+                option[1], option[2], option[3], option[4], option[5])
 
         if option[0] == "move_to_habitat":
                                 # species ,   name
