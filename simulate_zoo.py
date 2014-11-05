@@ -33,7 +33,7 @@ class SimultaZoo:
 
             for animal in self.zoo.animals:
                 animal.grows()
-                if (animal.chance_of_dying > 0.9):
+                if (animal.chance_of_dying() > 0.9):
                     print("An animal is going to die")
             self.see_animals()
             if self.zoo.check_for_dead_animals():
@@ -68,7 +68,7 @@ class SimultaZoo:
                 self.move_to_habitat(option[1], option[2])
 
             if option[0] == "simulate":
-                self.simulate(option[1], option[2])
+                self.simulate(option[1], int(option[2]))
 
             if option[0] == "finish":
                 print("FINISH")

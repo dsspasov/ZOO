@@ -8,7 +8,7 @@ class Animal:
         self.age = (int)(age) * 12
         self.name = name
         self.gender = gender
-        self.weight = weight
+        self.weight = (int)(weight)
         self.pregnant = False
         self.pregnancy = 0
         self.was_pregnant = False

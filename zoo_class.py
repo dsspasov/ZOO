@@ -40,7 +40,7 @@ class Zoo:
 
     def check_for_dead_animals(self):
         for animal in self.animals:
-            if animal.age >= animal.life_expectancy:
+            if animal.age >= animal.info.life_expectancy():
                 self.animals.remove(animal)
                 return True
             else:
