@@ -11,6 +11,8 @@ class Animal:
         self.weight = weight
         self.pregnant = False
         self.pregnancy = 0
+        self.was_pregnant = False
+        self.after_pregnancy = 0
         self.info = GetJsonData("database.json", self.species)
 
     #how much food the animal eats in kilos
