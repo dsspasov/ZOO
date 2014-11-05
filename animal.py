@@ -5,7 +5,7 @@ class Animal:
 
     def __init__(self, species, name, gender, age, weight):
         self.species = species
-        self.age = (int)(age * 12)
+        self.age = (int)(age) * 12
         self.name = name
         self.gender = gender
         self.weight = weight

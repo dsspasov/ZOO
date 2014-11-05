@@ -15,19 +15,17 @@ class SimultaZoo:
             printed_string += "{} : {}, {}, {}".format(
                 animal.name, animal.species, animal.age, animal.weight) + "\n"
         # return printed_string
-            print(animal.age)
         print(printed_string)
 
     def acomodate(self, species, name, gender, age, weight):
         animal_x = Animal(species, name, gender, age, weight)
         self.zoo.accomodate_animal(animal_x)
-        print(age)
 
     def move_to_habitat(self, species, name):
         animal_list = self.zoo.animals
         for animal in animal_list:
             if species == animal.species and name == animal.name:
-                self.zoo.remove(animal)
+                self.zoo.animals.remove(animal)
 
     def simulate(self, interval_of_time, period):
         # more things have to be done
@@ -58,14 +56,12 @@ class SimultaZoo:
             command = input("Enter command >")
             option = command.split(" ")
             if option[0] == "see_animals":
-                #print ("animals")
                 self.see_animals()
 
             if option[0] == "acomodate":
                             #   species,     name       gender,     age   , weight
                 self.acomodate(
                     option[1], option[2], option[3], option[4], option[5])
-                print(option[4])
 
             if option[0] == "move_to_habitat":
                                     # species ,   name
@@ -75,7 +71,7 @@ class SimultaZoo:
                 self.simulate(option[1], option[2])
 
             if option[0] == "finish":
-                print("adfad")
+                print("FINISH")
                 break
 
 
