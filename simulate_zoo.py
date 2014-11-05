@@ -15,11 +15,12 @@ class SimultaZoo:
             printed_string += "{} : {}, {}, {}".format(
                 animal.name, animal.species, animal.age, animal.weight) + "\n"
         # return printed_string
+            print(animal.age)
         print(printed_string)
 
-    def acomodate(self, species, age, name, gender, weight):
-        animal_x = Animal(species, age, name, gender, weight)
-        self.zoo.acomodate(animal_x)
+    def acomodate(self, species, name, gender, age, weight):
+        animal_x = Animal(species, name, gender, age, weight)
+        self.zoo.accomodate_animal(animal_x)
 
     def move_to_habitat(self, species, name):
         animal_list = self.zoo.animals
@@ -35,7 +36,6 @@ class SimultaZoo:
                 animal.grows()
                 if (animal.chance_of_dying > 0.9):
                     print("An animal is going to die")
-
             self.see_animals()
             if self.zoo.check_for_dead_animals():
                 print ("An animal has died")
@@ -53,20 +53,34 @@ class SimultaZoo:
             period -= 1
 
     def main(self):
-        command = input("Enter command >")
-        option = command.split(" ")
+        while True:
+            command = input("Enter command >")
+            option = command.split(" ")
+            if option[0] == "see_animals":
+                #print ("animals")
+                self.see_animals()
 
-        if option[0] == "see_animals":
-            self.see_animals()
+            if option[0] == "acomodate":
+                            #   species,     name       gender,     age   , weight
+                self.acomodate(
+                    option[1], option[2], option[3], option[4], option[5])
+                print(option[4])
 
-        if option[0] == "acomodate":
-                        #   species,     age       name,     gender   , weight
-            self.acomodate(
-                option[1], option[2], option[3], option[4], option[5])
+            if option[0] == "move_to_habitat":
+                                    # species ,   name
+                self.move_to_habitat(option[1], option[2])
 
-        if option[0] == "move_to_habitat":
-                                # species ,   name
-            self.move_to_habitat(option[1], option[2])
+            if option[0] == "simulate":
+                self.simulate(option[1], option[2])
 
-        if option[0] == "simulate":
-            self.simulate(option[1], option[2])
+            if option[0] == "finish":
+                print("adfad")
+                break
+
+
+def main():
+    a = SimultaZoo()
+    a.main()
+
+if __name__ == '__main__':
+    main()
