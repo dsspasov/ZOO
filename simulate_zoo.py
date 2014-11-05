@@ -33,14 +33,16 @@ class SimultaZoo:
 
             for animal in self.zoo.animals:
                 animal.grows()
+                if (animal.chance_of_dying > 0.9):
+                    print("An animal is going to die")
 
             self.see_animals()
-            if self.zoo.is_animal_dead():
+            if self.zoo.check_for_dead_animals():
                 print ("An animal has died")
             else:
                 print ("No animals have died")
 
-            if self.zoo.is_animal_born():
+            if self.zoo.born_animal():
                 print("An animal has been born")
             else:
                 print("No animals hava been born")

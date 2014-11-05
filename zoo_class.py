@@ -13,7 +13,7 @@ class Zoo:
         # check if name exists
         self.animals.append(animal)
 
-    def check_if_falit(self):
+    def not_enought_money(self):
         if self.budget < 0:
             return True
         return False
@@ -39,6 +39,9 @@ class Zoo:
         for animal in self.animals:
             if animal.age >= animal.life_expectancy:
                 self.animals.remove(animal)
+                return True
+            else:
+                return False
 
     # If you know what I mean ;)
     def make_animals(self, male_animal, female_animal):
@@ -53,3 +56,6 @@ class Zoo:
             if animal.pregnant and animal.pregnancy == animal.info.gestation_period():
                 new_animal = Animal(animal.species, "alabala", "gender", 0, animal.info.newborn_weight())
                 self.animals.append(new_animal)
+                return True
+            else:
+                return False
