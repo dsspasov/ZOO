@@ -11,28 +11,28 @@ class TestGetJsonData(unittest.TestCase):
     def test_get_species_type(self):
         species = ['turtle', 'ape', 'lion', 'tiger', 'pengin']
         for item in species:
-            self.assertIn(item, self.new_json.get_species_type())
+            self.assertIn(item, self.new_json.available_species())
 
-    def test_get_life_expectancy(self):
-        self.assertEqual(20, self.new_json.get_life_expectancy("tiger"))
+    def test_life_expectancy(self):
+        self.assertEqual(20, self.new_json.life_expectancy("tiger"))
 
-    def test_get_food_type(self):
-        self.assertEqual("carnivore", self.new_json.get_food_type("tiger"))
+    def test_food_type(self):
+        self.assertEqual("carnivore", self.new_json.food_type("tiger"))
 
-    def test_get_gestation_period(self):
-        self.assertEqual(6, self.new_json.get_gestation_period("tiger"))
+    def test_gestation_period(self):
+        self.assertEqual(6, self.new_json.gestation_period("tiger"))
 
-    def test_get_newborn_weight(self):
-        self.assertEqual(1, self.new_json.get_newborn_weight("tiger"))
+    def test_newborn_weight(self):
+        self.assertEqual(1, self.new_json.newborn_weight("tiger"))
 
-    def test_get_weight_age(self):
-        self.assertEqual(10, self.new_json.get_weight_age("tiger"))
+    def test_gained_weight_for_month(self):
+        self.assertEqual(10, self.new_json.gained_weight_for_month("tiger"))
 
-    def test_get_food_weight(self):
-        self.assertEqual(0.03, self.new_json.get_food_weight("tiger"))
+    def test_food_for_weight(self):
+        self.assertEqual(0.03, self.new_json.food_for_weight("tiger"))
 
-    def test_get_average_weight(self):
-        self.assertEqual(180, self.new_json.get_average_weight("tiger"))
+    def test_average_weight(self):
+        self.assertEqual(180, self.new_json.average_weight("tiger"))
 
 if __name__ == '__main__':
     unittest.main()
