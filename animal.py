@@ -11,19 +11,19 @@ class Animal:
         self.weight = weight
         self.pregnant = False
         self.pregnancy = 0
-        self.info = GetJsonData("database.json")
+        self.info = GetJsonData("database.json", self.species)
 
     #how much food the animal eats in kilos
     #and it can be multiply by the cost of eaten food so we will have the outcomes
     def eat(self):
-        return self.weight * self.info.get_food_weight(self.species)
+        return self.weight * self.info.food_for_weight()
 
     def grows(self):
         self.age += 1
-        if self.weight < self.info.get_average_weight(self.species):
-            self.weight += self.info.get_weight_age(self.species)
-            if self.weight > self.info.get_average_weight(self.species):
-                self.weight = self.info.get_average_weight(self.species)
+        if self.weight < self.info.average_weight():
+            self.weight += self.info.gained_weight_for_month()
+            if self.weight > self.info.average_weight():
+                self.weight = self.info.average_weight()
 
     #We could add dead before max age reached
     def die(self):
@@ -33,5 +33,5 @@ class Animal:
 
     def chance_of_dying(self):
         return (
-            (self.age / 12) / self.info.get_life_expectancy(self.species)
+            (self.age / 12) / self.info.life_expectancy()
         )
