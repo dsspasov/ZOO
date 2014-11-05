@@ -14,12 +14,6 @@ class GetJsonData:
         file_data.close()
         return json.loads(text)["species"][self.type_of_animal]
 
-    def available_species(self):
-        list_of_keys = []
-        for key in self.result:
-            list_of_keys.append(key)
-        return list_of_keys
-
     #returns years
     def life_expectancy(self):
         return self.result["life_expectancy"]
