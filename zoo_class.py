@@ -1,4 +1,5 @@
 from animal import Animal
+from random import *
 
 
 class Zoo:
@@ -24,13 +25,11 @@ class Zoo:
         return False
 
     # method with be used one time a month
-    # We will work in months - 60$ day ~ 1800$ month
     def win_money(self):
         for animal in self.animals:
             self.budget += Zoo.WON_MONEY_FOR_ANIMAL * Zoo.AVERAGE_MONTH_LENGHT
 
     # Method returns price of one meal of all animals for a day
-    # assuming they eat twise
     def pay_expanditures(self):
         for animal in self.animals:
             if animal.info.food_type() == "carnivore":
@@ -57,8 +56,15 @@ class Zoo:
     def born_animal(self):
         for animal in self.animals:
             if animal.pregnant and animal.pregnancy == animal.info.gestation_period():
-                new_animal = Animal(animal.species, "alabala", "gender", 0, animal.info.newborn_weight())
-                self.animals.append(new_animal)
+                new_generation = create_baby(animal)
+                self.animals.append(new_generation)
                 return True
             else:
                 return False
+
+    def create_baby(self, mother):
+        b_species = mother.species
+        b_name = animal.name + str(randint(1, 10000000))
+        b_gender = choice(['male', 'female'])
+        b_weight = mother.info.newborn_weight()
+        return Animal(b_species, b_name, b_gender, 0, b_weight)
