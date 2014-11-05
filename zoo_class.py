@@ -13,15 +13,22 @@ class Zoo:
             return True
         return False
 
+    #method with be used one time a month
     #We will work in months - 60$ day ~ 1800$ month
     def win_money(self):
         for animal in self.animals:
             self.budget += 1800
 
-    #Taking some random money.
-    #Shoudl check if budget < 0
+    #Method returns price of one meal of all animals for a day
+    #assuming they eat twise
     def pay_expanditures(self):
-        self.budget -= 1000
+        green = 2
+        meat = 4
+        for animal in self.animals:
+            if animal.info.get_food_type(animal.species) == "carnivore":
+                self.budget -= animal.eat() * meat
+            elif animal.info.get_food_type(animal.species) == "herbivore":
+                self.budget -= animal.eat() * green
 
     def check_for_dead_animals(self):
         for animal in self.animals:
