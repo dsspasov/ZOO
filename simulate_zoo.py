@@ -21,6 +21,7 @@ class SimultaZoo:
     def acomodate(self, species, name, gender, age, weight):
         animal_x = Animal(species, name, gender, age, weight)
         self.zoo.accomodate_animal(animal_x)
+        print(age)
 
     def move_to_habitat(self, species, name):
         animal_list = self.zoo.animals

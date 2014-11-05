@@ -5,7 +5,7 @@ class Animal:
 
     def __init__(self, species, name, gender, age, weight):
         self.species = species
-        self.age = age * 12
+        self.age = (int)(age * 12)
         self.name = name
         self.gender = gender
         self.weight = weight
@@ -13,8 +13,9 @@ class Animal:
         self.pregnancy = 0
         self.info = GetJsonData("database.json", self.species)
 
-    #how much food the animal eats in kilos
-    #and it can be multiply by the cost of eaten food so we will have the outcomes
+    # how much food the animal eats in kilos
+    # and it can be multiply by the cost of eaten food so we will have the
+    # outcomes
     def eat(self):
         return self.weight * self.info.food_for_weight()
 
@@ -25,7 +26,7 @@ class Animal:
             if self.weight > self.info.average_weight():
                 self.weight = self.info.average_weight()
 
-    #We could add dead before max age reached
+    # We could add dead before max age reached
     def die(self):
         if self.chance_of_dying >= 1:
             return True
