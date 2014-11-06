@@ -1,3 +1,4 @@
+
 {
     "species" : {
         "tiger":{
@@ -28,7 +29,7 @@
             "weight_age" : 1,
             "food_weight" : 0.06
         },
-        "pengin":{
+        "penguin":{
             "life_expectancy" : 20,
             "food_type": "carnivore",
             "gestation_period": 5,
