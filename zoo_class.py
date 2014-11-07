@@ -19,7 +19,7 @@ class Zoo:
         # check if name exists
         self.animals.append(animal)
 
-    def not_enought_money(self):
+    def have_money(self):
         if self.budget < 0:
             return True
         return False
@@ -30,7 +30,7 @@ class Zoo:
             self.budget += Zoo.WON_MONEY_FOR_ANIMAL * Zoo.AVERAGE_MONTH_LENGHT
 
     # Method returns price of one meal of all animals for a day
-    def pay_expanditures(self):
+    def feed_animals(self):
         for animal in self.animals:
             if animal.info.food_type() == "carnivore":
                 self.budget -= animal.eat() * Zoo.MEAT_PRICE
@@ -48,7 +48,7 @@ class Zoo:
     # If you know what I mean ;)
     def make_animals(self, male_animal, female_animal):
         if male_animal.gender == 'male' and female_animal.gender == 'female':
-            if female_animal.pregnancy == 0:
+            if female_animal.pregnancy == 0 and not female_animal.pregnant:
                 female_animal.pregnant = True
         else:
             print("Sex happened but baby did not :(")
@@ -67,4 +67,6 @@ class Zoo:
         b_name = animal.name + str(randint(1, 10000000))
         b_gender = choice(['male', 'female'])
         b_weight = mother.info.newborn_weight()
+        mother.pregnant = False
+        mother.pregnancy = 0
         return Animal(b_species, b_name, b_gender, 0, b_weight)
