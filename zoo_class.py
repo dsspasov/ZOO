@@ -39,7 +39,8 @@ class Zoo:
 
     def check_for_dead_animals(self):
         for animal in self.animals:
-            if animal.age >= animal.info.life_expectancy():
+            # make animal age in ages not in months
+            if (animal.age) / 12 >= animal.info.life_expectancy():
                 self.animals.remove(animal)
                 return True
             else:
@@ -47,26 +48,56 @@ class Zoo:
 
     # If you know what I mean ;)
     def make_animals(self, male_animal, female_animal):
+        # print(female_animal.pregnancy)
+        # print(female_animal)
         if male_animal.gender == 'male' and female_animal.gender == 'female':
-            if female_animal.pregnancy == 0 and not female_animal.pregnant:
-                female_animal.pregnant = True
+            if female_animal.was_pregnant and female_animal.after_pregnancy != 6:
+                female_animal.after_pregnancy += 1
+            else:
+                if female_animal.pregnancy == 0 and not female_animal.pregnant:
+                    female_animal.pregnant = True
+                    female_animal.was_pregnant = False
+                    female_animal.after_pregnancy = 6
+        #        print('f')
         else:
             print("Sex happened but baby did not :(")
 
-    def born_animal(self):
-        for animal in self.animals:
-            if animal.pregnant and animal.pregnancy == animal.info.gestation_period():
-                new_generation = create_baby(animal)
-                self.animals.append(new_generation)
-                return True
-            else:
-                return False
+    def meet_animals(self):
+        for animal_male in self.animals:
+            if animal_male.gender == 'male':
+                for animal_female in self.animals:
+                    if ((animal_male.species == animal_female.species) and (animal_female.gender == 'female')):
+                        self.make_animals(animal_male, animal_female)
+        #                print('x')
 
     def create_baby(self, mother):
-        b_species = mother.species
-        b_name = animal.name + str(randint(1, 10000000))
-        b_gender = choice(['male', 'female'])
-        b_weight = mother.info.newborn_weight()
+        baby_species = mother.species
+        baby_name = mother.name + str(randint(1, 10000000))
+        baby_gender = choice(['male', 'female'])
+        baby_weight = mother.info.newborn_weight()
         mother.pregnant = False
         mother.pregnancy = 0
-        return Animal(b_species, b_name, b_gender, 0, b_weight)
+        return Animal(baby_species, baby_name, baby_gender, 0, baby_weight)
+
+    def born_animal(self):
+        self.meet_animals()
+        for animal in self.animals:
+            if animal.gender == 'female':
+                self.make_animal_more_pregnant(animal)
+                if animal.pregnant and animal.pregnancy == animal.info.gestation_period():
+                    new_generation = self.create_baby(animal)
+                    self.animals.append(new_generation)
+    
+                    animal.was_pregnant = True
+                    animal.after_pregnancy = 0
+                    return True
+                else:
+                    # print(animal.pregnancy)
+                    return False
+
+    def check_animal_pregnancy(self):
+        pass
+
+    def make_animal_more_pregnant(self, animal):
+        if animal.gender == 'female' and animal.pregnant:
+            animal.pregnancy += 1
