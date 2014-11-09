@@ -31,14 +31,6 @@ class TestZoo(unittest.TestCase):
         after_money = self.zz.budget
         self.assertGreaterEqual(after_money, before_money)
 
-    def test_are_same_species(self):
-        self.assertTrue(self.zz.are_same_species([self.male_kitten, self.female_kitten]))
-        self.assertFalse(self.zz.are_same_species([self.male_kitten, self.female_ape]))
-
-    def test_are_different_genders(self):
-        self.assertTrue(self.zz.are_different_genders([self.male_kitten, self.female_ape]))
-        self.assertFalse(self.zz.are_different_genders([self.female_kitten, self.female_ape]))
-
     # def test_make_animals(self):
     #     self.zz.make_animals(self.male_kitten, self.female_kitten)
     #     self.assertTrue(self.female_kitten.pregnant)
