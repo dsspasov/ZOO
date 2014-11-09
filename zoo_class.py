@@ -15,9 +15,11 @@ class Zoo:
         self.budget = budget
 
     # Should append object from animal class
-    def accomodate_animal(self, animal):
-        # check if name exists
-        self.animals.append(animal)
+    def accomodate_animal(self, new_animal):
+        for animal in self.animals:
+            if animal.name == new_animal.name:
+                raise ValueError('Name already exists!')
+        self.animals.append(new_animal)
 
     def have_money(self):
         if self.budget < 0:
@@ -50,8 +52,6 @@ class Zoo:
         if male_animal.gender == 'male' and female_animal.gender == 'female':
             if female_animal.pregnancy == 0 and not female_animal.pregnant:
                 female_animal.pregnant = True
-        else:
-            print("Sex happened but baby did not :(")
 
     def born_animal(self):
         for animal in self.animals:

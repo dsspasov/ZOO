@@ -3,7 +3,7 @@ from animal import Animal
 from zoo_class import Zoo
 
 
-class SimultaZoo:
+class SimulateZoo:
 
     def __init__(self):
         self.zoo = Zoo()
@@ -76,7 +76,7 @@ class SimultaZoo:
 
 
 def main():
-    a = SimultaZoo()
+    a = SimulateZoo()
     a.main()
 
 if __name__ == '__main__':
