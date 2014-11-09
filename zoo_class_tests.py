@@ -25,37 +25,36 @@ class TestZoo(unittest.TestCase):
         self.zz.accomodate_animal(self.male_tiger)
         self.assertIn(self.male_tiger, self.zz.animals)
 
+    def test_have_money(self):
+        self.zz.budget = 0
+        self.assertFalse(self.zz.have_money())
+        self.zz.budget = 1
+        self.assertTrue(self.zz.have_money())
+
     def test_win_money(self):
         before_money = self.zz.budget
         self.zz.win_money()
         after_money = self.zz.budget
         self.assertGreaterEqual(after_money, before_money)
 
-    # def test_make_animals(self):
-    #     self.zz.make_animals(self.male_kitten, self.female_kitten)
-    #     self.assertTrue(self.female_kitten.pregnant)
+    def test_make_animals(self):
+        self.zz.make_animals(self.male_kitten, self.female_kitten)
+        self.assertTrue(self.female_kitten.pregnant)
 
-    # def test_born_animal(self):
+    def test_feed_animals(self):
+        self.zz.feed_animals()
+        self.assertEqual(self.zz.budget, 9959.8)
+
+    def test_check_for_dead_animals(self):
+        count = len(self.zz.animals)
+        self.zz.animals[0].age = self.zz.animals[0].info.life_expectancy() * 12 + 13
+        self.zz.check_for_dead_animals()
+        self.assertEqual(count - 1, len(self.zz.animals))
+
+    # def test_update_pregnancy_born(self):
     #     self.female_kitten.pregnant = True
     #     self.female_kitten.pregnancy = self.female_kitten.info.gestation_period
-    #     self.assertTrue(self.zz.born_animal)
-
-    def test_get_food_type(self):
-        self.assertEqual(self.male_kitten.info.food_type(), 'carnivore')
-
-    def test_have_money(self):
-        before_pay = self.zz.budget
-        self.zz.have_money()
-        after_pay = self.zz.budget
-        self.assertLessEqual(after_pay, before_pay)
-
-
-    # Needs more functionality
-    # def test_check_for_dead_animals(self):
-    #     self.zz.animals.append('horse')
-    #     self.zz.animals['hourse'].age = 'hourse'.life_expectacy + 1
-    #     self.zz.check_for_dead_animals()
-    #     self.assertNotIn('horse', self.zz.animals)
+    #     self.zz.update_pregnancy(self.female_kitten)
 
     #Needs more functionality
     # def test_check_if_reproduction(self):

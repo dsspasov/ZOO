@@ -23,9 +23,7 @@ class Zoo:
         self.animals.append(new_animal)
 
     def have_money(self):
-        if self.budget < 0:
-            return True
-        return False
+        return self.budget > 0
 
     # method with be used one time a month
     def win_money(self):
