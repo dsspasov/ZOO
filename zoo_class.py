@@ -41,7 +41,6 @@ class Zoo:
 
     def check_for_dead_animals(self):
         for animal in self.animals:
-            # make animal age in ages not in months
             if (animal.age) / 12 >= animal.info.life_expectancy():
                 self.animals.remove(animal)
                 return True
@@ -60,6 +59,9 @@ class Zoo:
         if animals[0].species == animals[1].species:
             return True
         return False
+
+    def update_pregnancy(self, animal):
+        pass
 
     def make_animals(self, animal_one, animal_two):
         # print(female_animal.pregnancy)
