@@ -44,9 +44,10 @@ class SimulateZoo:
             if self.zoo.born_animal():
                 print("An animal has been born")
             else:
-                print("No animals hava been born")
-
-            if self.zoo.not_enought_money():
+                print("No animals have been born")
+            self.zoo.win_money()
+            self.zoo.feed_animals()
+            if self.zoo.have_money():
                 print ("Not enought money")
 
             period -= 1
@@ -60,8 +61,7 @@ class SimulateZoo:
 
             if option[0] == "acomodate":
                             #   species,     name       gender,     age   , weight
-                self.acomodate(
-                    option[1], option[2], option[3], option[4], option[5])
+                self.acomodate(option[1], option[2], option[3], option[4], option[5])
 
             if option[0] == "move_to_habitat":
                                     # species ,   name

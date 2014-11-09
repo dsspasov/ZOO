@@ -39,9 +39,9 @@ class TestZoo(unittest.TestCase):
     def test_get_food_type(self):
         self.assertEqual(self.male_kitten.info.food_type(), "carnivore")
 
-    def test_pay_expanditures(self):
+    def test_have_money(self):
         before_pay = self.zz.budget
-        self.zz.pay_expanditures()
+        self.zz.have_money()
         after_pay = self.zz.budget
         self.assertLessEqual(after_pay, before_pay)
 
