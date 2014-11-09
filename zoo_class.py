@@ -80,18 +80,6 @@ class Zoo:
                 animal.was_pregnant = False
                 animal.after_pregnancy = 0
 
-    def make_animals(self, animal_one, animal_two):
-        # print(female_animal.pregnancy)
-        # print(female_animal)
-        if male_animal.gender == 'male' and female_animal.gender == 'female':
-            if female_animal.was_pregnant and female_animal.after_pregnancy != 6:
-                female_animal.after_pregnancy += 1
-            else:
-                if female_animal.pregnancy == 0 and not female_animal.pregnant:
-                    female_animal.pregnant = True
-                    female_animal.was_pregnant = False
-                    female_animal.after_pregnancy = 6
-
     def meet_animals(self):
         for animal_male in self.animals:
             if animal_male.gender == 'male':
