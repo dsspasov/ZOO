@@ -8,6 +8,7 @@ class Zoo:
     GREEN_PRICE = 2
     WON_MONEY_FOR_ANIMAL = 60
     AVERAGE_MONTH_LENGHT = 30
+    PREGNANCY_REST = 6  # 6 months till animal can get pregnant again
 
     def __init__(self, capacity=0, budget=0):
         self.animals = []
@@ -50,18 +51,34 @@ class Zoo:
     #takes array of two animals
     def are_different_genders(self, animals):
         genders = [animals[0].gender, animals[1].gender]
-        if 'male' in genders and 'female' in genders:
-            return True
-        return False
+        return 'male' in genders and 'female' in genders
 
     #takes array of two animals
     def are_same_species(self, animals):
-        if animals[0].species == animals[1].species:
-            return True
-        return False
+        return animals[0].species == animals[1].species
+
+    def female_and_pregnat(self, animal):
+        return animal.gender == 'female' and animal.pregnant
 
     def update_pregnancy(self, animal):
-        pass
+        if not animal.pregnant:
+            raise ValueError('Animal is not pregnant!')
+        elif animal.pregnant:
+            if animal.pregnancy < animal.gestation_period:
+                animal.pregnancy += 1
+            else:
+                newborn = create_baby(animal)
+                self.animals.append(newborn)
+                animal.pregnant = False
+                animal.pregnancy = 0
+                animal.was_pregnant = True
+                animal.after_pregnancy = 1
+        elif animal.was_pregnant:
+            if animal.after_pregnancy < PREGNANCY_REST:
+                animal.after_pregnancy += 1
+            else:
+                animal.was_pregnant = False
+                animal.after_pregnancy = 0
 
     def make_animals(self, animal_one, animal_two):
         # print(female_animal.pregnancy)
